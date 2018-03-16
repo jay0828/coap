@@ -1,0 +1,12 @@
+#~/bin/bash
+
+mkdir COAP
+cd COAP
+mkdir myCoAP
+cd myCoAP
+git clone https://github.com/eclipse/californium.git
+sudo apt-get update
+sudo apt-get upgrade 
+sudo apt-get install maven
+update-java-alternatives -l
+
