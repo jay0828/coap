@@ -3,14 +3,14 @@ import sys
 import AmbulanceStateMachine as ambulance
 import testAmbulance as tester
 from flask import Flask
-import flagFile as fl
+import database as fl
 
 app = Flask(__name__)
 
-@app.route('/ambulance/<direction>')
-def testMain(direction):
+@app.route('/ambulance/<headedDirection>')
+def testMain(headedDirection):
     fl.flag = 2
-    tester.mach()
+    fl.direction = headedDirection
     return 0
 
 @app.route('/start')
