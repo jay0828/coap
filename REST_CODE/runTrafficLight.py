@@ -17,8 +17,9 @@ def ambulanceInterrupt (stateCurrent):
         stateCur = ambulance.ambulanceStateMachine('H', stateCurrent)
         stateCur = machine.mainStateMachine(stateCurrent)
         print ("Ambulance Interrupted")
-        dat = client.senior_design.datas
-        dat.insert({'name':'trig','trigger':'0'})
+        file = open("trigger.txt", "w")
+        file.write("4")
+        file.close()
         return stateCur
 
 #Contains the Infinite while loop
@@ -29,15 +30,14 @@ def main():
     print("Dont come here")
         #Infinite While loop that constantly runs state machine
     while(1):
-            dat = client.senior_design.datas
-            trigg = dat.find_one({'name':'trig'})
-            print('Print get trigger value in run traffic light')
-            print (trigg['trigger'])
+            with open('trigger.txt', 'r') as f:
+                fline = f.readline()
+                print(fline)
             #Normal State Machine
-            if trigg['trigger'] == '0':
+            if fline == '4':
                     stateCurr = normalTrafficLight(stateCurr)
             #Ambulance Interrupt
-            elif trigg['trigger'] == '2':
+            elif fline == '2':
                     print('Ambulance interrupt accepted!')
                     stateCurr = ambulanceInterrupt(stateCurr)
             #Error State: SHOULD NOT GO HERE!!

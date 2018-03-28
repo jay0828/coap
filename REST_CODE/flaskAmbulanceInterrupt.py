@@ -12,11 +12,11 @@ app.config['MONGO_URI'] = 'mongodb://user1:seniordesign@ds123259.mlab.com:23259/
 mongo = PyMongo(app)
 
 
-
 @app.route('/ambulance/<headedDirection>')
 def testMain(headedDirection):
-    dat = mongo.db.datas
-    dat.update_one({'_id':'5ab53bd374fece19fb523a0d'},{'&set': {'trigger':'6'}}, upsert=False)
+    file = open("trigger.txt", "w")
+    file.write("2")
+    file.close()
     if headedDirection == "Horizontal":
         ambulanceInfo.setDirection('H')
     else:
