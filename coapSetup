@@ -8,5 +8,6 @@ git clone https://github.com/eclipse/californium.git
 sudo apt-get update
 sudo apt-get upgrade 
 sudo apt-get install maven
+sudo apt-get install pi4j
 update-java-alternatives -l
 
