@@ -4,6 +4,7 @@ cd /etc/wpa_supplicant
 rm wpa_supplicant.conf
 echo "
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+ap_scan=1
 update_config=1
 
 network={
