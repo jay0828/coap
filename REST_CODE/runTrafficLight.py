@@ -1,10 +1,6 @@
 import stateNormal as machine
 import sys
 import AmbulanceStateMachine as ambulance
-import pymongo
-from pymongo import MongoClient
-
-client = MongoClient('mongodb://user1:seniordesign@ds123259.mlab.com:23259/senior_design')
 
 #Execute a state in the Traffic Light State Machine
 def normalTrafficLight (stateCurrent):
